@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %} Eventos {% endblock %}
+{% block content %}
+
+<div class="row">
+  {% for event in EVENTS %}
+  <div class="col-sm-4">
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <a href="{{ event.url }}">
+          <h5 class="card-title">{{ event.name }}</h5>
+        </a>
+        <h6 class="card-subtitle mb-2 text-muted">{{ event.date.strftime('%d/%m/%y') }}</h6>
+        <p class="card-text">{{ event.local }}</p>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+{% endblock %}
